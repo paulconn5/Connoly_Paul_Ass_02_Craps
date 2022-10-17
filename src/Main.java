@@ -11,6 +11,7 @@ public class Main {
         int diceCombined;
         int lastRoll;
         boolean done = false;
+        boolean finish = false;
 
         do {
 
@@ -25,7 +26,7 @@ public class Main {
             }
             else {
                 System.out.println("You rolled a " + diceCombined + " which is now the point.");
-                boolean finish = false;
+                finish = false;
                 lastRoll = diceCombined;
                 do {
                     dice1 = rnd.nextInt(7);
@@ -42,15 +43,12 @@ public class Main {
                     }
 
                 } while (!finish);
-
-
-                System.out.println("Play again? [Y/N]");
-                p1 = scan.nextLine();
-                if (p1.equalsIgnoreCase("N")) {
-                    done = true;
-                }
             }
-
+            System.out.println("Play again? [Y/N]");
+            p1 = scan.nextLine();
+            if (p1.equalsIgnoreCase("N")) {
+                done = true;
+            }
         } while(!done);
     }
 }
